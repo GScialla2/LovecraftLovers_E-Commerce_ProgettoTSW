@@ -4,8 +4,8 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="ParteCSS/CategorieProdotti.css">
-    <link rel="stylesheet" type="text/css" href="ParteCSS/navBarAmministratore.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ParteCSS/CategorieProdotti.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ParteCSS/navBarAmministratore.css">
     <script>
         function myFunction() {
             var x = document.getElementById("myTopnav");
@@ -55,7 +55,7 @@
 <body>
 <img src="immagini/logosito.png" class="sfondo">
 <div class="topnav" id="myTopnav">
-    <a href="HomeServletAmministratore" class="active"><i class="fa fa-home"></i></a>
+    <a href="../HomeServletAmministratore" class="active"><i class="fa fa-home"></i></a>
     <div class="dropdown">
         <button class="dropbtn" onclick="window.location.href='InizioServlet?valore=Libri'">Libri
             <i class="fa fa-caret-down"></i>
@@ -102,7 +102,7 @@
     </div>
 
     <div class="dropdown">
-        <button class="dropbtn" onclick="window.location.href='InizioServlet?valore=Clothes'">Clothes
+        <button class="dropbtn" onclick="window.location.href='../InizioServlet?valore=Clothes'">Clothes
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
@@ -122,15 +122,17 @@
     </div>
     <div class="dropdown">
         <%Utente u = (Utente) session.getAttribute("Amministratore");%>
-        <a style="text-underline: none; pointer-events: none">Bentornato Amministatore, <%=u.getNome()%></a>
+        <% if (u != null) { %>
+        <a style="text-underline: none; pointer-events: none">Bentornato Amministratore, <%= u.getNome() %></a>
+        <% } else { %>
+        <a style="text-underline: none; pointer-events: none">Utente non autenticato</a>
+        <% } %>
     </div>
     <div class="dropdown">
         <button class="dropbtn" onclick="window.location.href='HomeServletAmministratore?valore=quantita'"><i class='fa fa-cart-arrow-down'></i></button>
     </div>
     <div class="dropdown">
-        <div class="dropdown">
-            <button class="dropbtn" onclick="window.location.href='HomeServletAmministratore?valore=ordine'"><i class="fa fa-calendar-check-o"></i></button>
-        </div>
+        <button class="dropbtn" onclick="window.location.href='HomeServletAmministratore?valore=ordine'"><i class="fa fa-calendar-check-o"></i></button>
     </div>
     <div class="dropdown">
         <button class="dropbtn" onclick="window.location.href='HomeServletAmministratore?valore=clienti'"><i class="fa fa-group"></i></button>
@@ -141,3 +143,4 @@
 </div>
 </body>
 </html>
+

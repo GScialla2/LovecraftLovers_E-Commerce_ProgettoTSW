@@ -10,7 +10,7 @@
         ArrayList<AcquistoProdotti> riepilogoProdotti = (ArrayList<AcquistoProdotti>) request.getAttribute("riepilogoProdotti");
 
     %>
-    <link rel="stylesheet" type="text/css" href="ParteCSS/CategorieProdotti.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ParteCSS/CategorieProdotti.css">
     <style>
         table,tr,td{
             border: 3px solid green;

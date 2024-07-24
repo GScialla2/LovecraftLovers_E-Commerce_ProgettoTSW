@@ -3,9 +3,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="ParteCSS/paginaProdotto.css">
-    <link rel="stylesheet" type="text/css" href="ParteCSS/navBarAmministratore.css">
-    <link rel="stylesheet" type="text/css" href="ParteCSS/CategorieProdotti.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ParteCSS/paginaProdotto.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ParteCSS/navBarAmministratore.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ParteCSS/CategorieProdotti.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <% Prodotto prodottoModifica = (Prodotto) request.getAttribute("prodottoModifica");
         String val = prodottoModifica.getIdProdotto().substring(3);

@@ -8,7 +8,7 @@
     <%
         ArrayList<Prodotto> prodEsauriti = (ArrayList<Prodotto>) request.getAttribute("prodottiEsauriti");
     %>
-    <link rel="stylesheet" type="text/css" href="ParteCSS/CategorieProdotti.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ParteCSS/CategorieProdotti.css">
 </head>
 <body>
 <% if(prodEsauriti.size()==0){%>

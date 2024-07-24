@@ -8,7 +8,7 @@
 </head>
 <% ArrayList<Utente> riepilogoUtente= (ArrayList<Utente>) request.getAttribute("riepilogoUtente");
     Utente utente = (Utente) session.getAttribute("Amministratore");%>
-<link rel="stylesheet" type="text/css" href="ParteCSS/VisualizzaUtenti.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ParteCSS/VisualizzaUtenti.css">
 <body>
 <table>
     <tr>

@@ -75,18 +75,15 @@
         <th style="font-size: 2vw">Orario:</th>
     </tr>
     <tr>
-        <th><p id="1">Via casa dell'acqua n.20 <br> 80013 Casalnuovo di Napoli (NA) <br> loc. Tavernanova</p></th>
-        <th><p id="2">Cellulare:3477386676<br>Fisso:0813184751</p></th>
-        <th><p id="3">pharmatex.materassi@libero.it</p></th>
+        <th><p id="1">Via campole case sparse SNC <br> 81040 Liberi (CE) <br> loc. Liberi</p></th>
+        <th><p id="2">Cellulare:3332984857<br>Fisso:0823870381</p></th>
+        <th><p id="3">lovecraft.lovers@libero.it</p></th>
         <th><p id="4">Lun - Ven 09:30 - 18:00 <br> Sabato 09:00 - 13:00 <br> Domenica chiuso</p></th>
         <td><button id="chiSiamo" class="cart">Chi siamo</button></td>
         <td><button class="cart" onclick="window.location.href='HomePage'">HomePage</button></td>
     </tr>
 </table>
-<p id="5">Ci occupiamo della vendita di materassi Pharmatex a Casalnuovo, in provincia di Napoli.<br> Si tratta di un prodotto artigianale che può vantare oltre 50 anni di esperienza nel settore per offrire a chiunque l'opportunità di avere un riposo notturno adeguato, per recuperare le energie fisiche e mentali per una nuova giornata di lavoro.<br>
-    Nel nostro servizio di vendita materassi offriamo al cliente un'ampia gamma di soluzioni realizzate con specifiche caratteristiche e con un ottimo rapporto qualità-prezzo.<br>
-    Potrete valutare i nostri materassi in memory foam che si adattano alla perfezione alle forme del corpo o scegliere il materasso con molle ortopedico. <br> In funzione delle vostre caratteristiche fisiche e della vostra abitudine nel dormire, sarete opportunamente consigliati sulla tipologia più adatta.<br>
-    Per maggiori informazioni sul nostro servizio di vendita materassi e per gli altri accessori indispensabili per il riposo notturno, come toghe e reti rinforzate, contattateci utilizzando il numero di telefono indicato sul sito.
+<p id="5">Ci occupiamo della vendita di action figure dediacate a lovecraft , vestiti in stile lovecraftiano e varie raccolte e adattamenti delle opere letterarie del solitario di Providence a Liberi, in provincia di Caserta.<br> <br>
 </p>
 </body>
 </html>

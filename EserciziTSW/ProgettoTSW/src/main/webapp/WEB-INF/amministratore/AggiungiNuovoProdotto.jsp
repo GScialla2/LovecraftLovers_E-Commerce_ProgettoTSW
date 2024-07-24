@@ -2,7 +2,7 @@
 <html>
 <head>
     <tite>Aggiunta nuovo prodotto</tite>
-    <link rel="stylesheet" type="text/css" href="ParteCSS/AggiuntaProdotto.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ParteCSS/AggiuntaProdotto.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script>
         function validateNewProduct()
@@ -155,7 +155,7 @@
     </style>
 </head>
 <body>
-<form method="post" action="AggiuntaProdottoServlet">
+<form method="post" action="Controller/AggiuntaProdottoServlet">
     <table>
         <tr>
             <th class="inserimento1">

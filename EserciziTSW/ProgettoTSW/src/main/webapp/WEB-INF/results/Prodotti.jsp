@@ -6,7 +6,7 @@
 <%@ include file="/ParteHTML/Filter.html" %>
 <html>
 <head>
-    <link rel="stylesheet" href="/ParteCSS/CategorieProdotti.css">
+    <link rel="stylesheet" href="ParteCSS/CategorieProdotti.css">
     <%
         String x;
         ArrayList<Prodotto> prod = new ArrayList<Prodotto>();
@@ -40,7 +40,7 @@
             </a>
         </div>
         <div class="info">
-            <b style="text-align: center;">Modello:<%=p.getNomeProd()%>
+            <b style="text-align: center;"><%=p.getNomeProd()%>
             </b><br>
             <b style="text-align: center;color: red"><%=p.getPrezzo()%> €</b>
         </div>

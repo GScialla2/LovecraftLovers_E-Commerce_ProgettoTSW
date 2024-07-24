@@ -8,7 +8,7 @@ public class AcquistoProdottiDAO
     {
         try(Connection con = ConPool.getConnection())
         {
-            PreparedStatement ps = con.prepareStatement("INSERT INTO Acquistare(emailCliente,idProdotto,quantitaAcquistate) VALUES (?,?,?)",Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement ps = con.prepareStatement("INSERT INTO Acquistare(emailCliente,idProdotto,quantitaAcquistata) VALUES (?,?,?)",Statement.RETURN_GENERATED_KEYS);
             ps.setString(1,email);
             ps.setString(2,idProdotto);
             ps.setInt(3,quantita);
@@ -25,7 +25,7 @@ public class AcquistoProdottiDAO
         ArrayList<AcquistoProdotti> prodottiOrdinati = new ArrayList<>();
         try(Connection con = ConPool.getConnection())
         {
-            PreparedStatement ps = con.prepareStatement("SELECT P.idProdotto,P.nomeProdotto,P.prezzo,A.quantitaAcquistata,C.nome,C.cognome,C.via,C.cap,C.provincia FROM (Prodotto as P join Acquistare as A on P.idProdotto = A.idProdotto)join Cliente as C on C.email = A.emailCliente");
+            PreparedStatement ps = con.prepareStatement("SELECT P.idProdotto,P.nomeProd,P.prezzo,A.quantitaAcquistata,C.nome,C.cognome,C.via,C.citta,C.cap,C.provincia FROM (Prodotto as P join Acquistare as A on P.idProdotto = A.idProdotto)join Cliente as C on C.email = A.emailCliente");
             ResultSet rs = ps.executeQuery();
             while(rs.next())
             {

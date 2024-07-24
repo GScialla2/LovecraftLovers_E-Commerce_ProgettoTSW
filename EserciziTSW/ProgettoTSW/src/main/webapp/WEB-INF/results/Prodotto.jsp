@@ -49,23 +49,19 @@
             <%
                 String x = p.getIdProdotto();
                 if (x.charAt(0) == 'M') {%>
-            <p>Materiale:<%=p.getTipoActionFigure()%>
+            <p>Categoria Pantheon:<%=p.getTipoActionFigure()%>
             </p>
             <%} else if (x.charAt(0) == 'L') {%>
-            <p>Colore:<%=p.getEditoreLibro()%>
+            <p>Editore:<%=p.getEditoreLibro()%>
             </p>
             <%} else if (x.charAt(0) == 'R') {%>
             <p>Materiale:<%=p.getMaterialeAppoggio()%>
             </p>
             <%} else if (x.charAt(0) == 'D' || x.charAt(0) == 'P') {%>
-            <p>Rivestimento:<%=p.getTipoGioiello()%>
-            </p>
             <p>Colore:<%=p.getColoreGioiello()%>
             </p>
             <%} else {%>
             <p>Tipo stoffa:<%=p.getTipoStoffa()%>
-            </p>
-            <p>Forma:<%=p.getTipoCloth()%>
             </p>
             <p>Materiale:<%=p.getMaterialeCloth()%>
             </p>
@@ -76,7 +72,7 @@
     <table>
         <tr>
             <th>
-                <h1>Modello:<%=p.getNomeProd()%>
+                <h1><%=p.getNomeProd()%>
                 </h1>
                 <h2><%=p.getPrezzo()%>€</h2>
             </th>

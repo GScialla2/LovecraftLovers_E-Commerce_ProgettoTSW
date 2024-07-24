@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="ParteCSS/CategorieProdotti.css">
     <link rel="stylesheet" href="ParteCSS/styleSito.css">
-    <title>Pharmatex</title>
+    <title>Lovecraft Lovers</title>
     <%
         List<Prodotto> prod = (ArrayList<Prodotto>) request.getAttribute("prodotti");
         int n = (int) request.getAttribute("Valore");
@@ -68,58 +68,58 @@
 <img src="immagini/logosito.png" class="sfondo">
 <div class="topnav" id="myTopnav">
     <div class="dropdown">
-        <button class="dropbtn" onclick="window.location.href='InizioServlet?action=Letto'">Letto
+        <button class="dropbtn" onclick="window.location.href='InizioServlet?action=Libri'">Libri
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="InizioServlet?action=LettoSingolo">Letto singolo</a>
-            <a href="InizioServlet?action=LettoMatrimoniale">Letto matrimoniale</a>
-            <a href="InizioServlet?action=LettoPiazzaEMezzo">Letto piazza e mezzo</a>
-            <a href="InizioServlet?action=LettoContenitore">Letto contenitore</a>
+            <a href="InizioServlet?action=Romanzi">Romanzi</a>
+            <a href="InizioServlet?action=RaccolteDiRacconti">Raccolte di racconti</a>
+            <a href="InizioServlet?action=Lettere">Lettere</a>
+            <a href="InizioServlet?action=Cicli">Cicli</a>
         </div>
     </div>
 
     <div class="dropdown">
-        <button class="dropbtn" onclick="window.location.href='InizioServlet?action=Materasso'">Materasso
+        <button class="dropbtn" onclick="window.location.href='InizioServlet?action=ActionFigure'">Action Figure
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="InizioServlet?action=MaterassoSingolo">Materasso singolo</a>
-            <a href="InizioServlet?action=MaterassoMatrimoniale">Materasso matrimoniale</a>
-            <a href="InizioServlet?action=MaterassoPiazzaEMezzo">Materasso piazza e mezzo</a>
+            <a href="InizioServlet?action=GrandiAntichi">Grandi Antichi</a>
+            <a href="InizioServlet?action=DeiEsterni">Dei Esterni</a>
+            <a href="InizioServlet?action=AlieniECreatureDelFolklore">Alieni e creature del folklore</a>
         </div>
     </div>
     <div class="dropdown">
-        <button class="dropbtn" onclick="window.location.href='InizioServlet?action=Rete'">Rete
+        <button class="dropbtn" onclick="window.location.href='InizioServlet?action=AppoggiActionFigure'">Appoggi Action Figure
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="InizioServlet?action=ReteSingola">Rete singola</a>
-            <a href="InizioServlet?action=ReteMatrimoniale">Rete matrimoniale</a>
-            <a href="InizioServlet?action=RetePiazzaEMezzo">Rete piazza e mezzo</a>
-        </div>
-    </div>
-
-    <div class="dropdown">
-        <button class="dropbtn" onclick="window.location.href='InizioServlet?action=Divano'">Divano
-            <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-            <a href="InizioServlet?action=DivanoLetto">Divano Letto</a>
-            <a href="InizioServlet?action=DivanoContenitore">Divano contenitore</a>
-            <a href="InizioServlet?action=DivanoConPenisola">Divano con penisola</a>
-            <a href="InizioServlet?action=DivanoPoltrona">Poltrona</a>
+            <a href="InizioServlet?action=AppoggiClassici">Appoggi classici</a>
+            <a href="InizioServlet?action=AppoggiABraccio">Appoggi a braccio</a>
+            <a href="InizioServlet?action=AppoggiAPiedistallo">Appoggi a piedistallo</a>
         </div>
     </div>
 
     <div class="dropdown">
-        <button class="dropbtn" onclick="window.location.href='InizioServlet?action=Cuscino'">Cuscino
+        <button class="dropbtn" onclick="window.location.href='InizioServlet?action=GioielliDiBigiotteria'">Gioielli di bigiotteria
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="InizioServlet?action=Cuscinoguanciale">Guanciale</a>
-            <a href="InizioServlet?action=CuscinoRelax">Relax</a>
-            <a href="InizioServlet?action=CuscinoViaggio">Viaggio</a>
+            <a href="InizioServlet?action=Collane">Collane</a>
+            <a href="InizioServlet?action=Bracciali">Bracciali</a>
+            <a href="InizioServlet?action=Anelli">Anelli</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn" onclick="window.location.href='InizioServlet?action=Clothes'">Clothes
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="InizioServlet?action=Felpe">Felpe</a>
+            <a href="InizioServlet?action=MaglieAManicaLunga">Maglie a manica lunga</a>
+            <a href="InizioServlet?action=Camicie">Camicie</a>
+            <a href="InizioServlet?action=T-Shirt">T-Shirt</a>
         </div>
     </div>
 
@@ -198,7 +198,7 @@
             </a>
         </div>
         <div class="info">
-            <b style="text-align: center;">Modello:<%=prod.get(n).getNomeProd()%>
+            <b style="text-align: center;"><%=prod.get(n).getNomeProd()%>
             </b><br>
             <b style="text-align: center;color: red"><%=prod.get(n).getPrezzo()%>&#8364;</b>
         </div>

@@ -12,7 +12,7 @@ public class ConPool
         if(dataSource == null)
         {
             PoolProperties p = new PoolProperties();
-            p.setUrl("jdbc:mysql://localhost:3306//LovecraftLovers?serverTimezone="+TimeZone.getDefault().getID());
+            p.setUrl("jdbc:mysql://localhost:3306/LovecraftLovers?serverTimezone="+TimeZone.getDefault().getID());
             p.setDriverClassName("com.mysql.cj.jdbc.Driver");
             p.setUsername("root");
             p.setPassword("Gabriel82@");

@@ -8,7 +8,7 @@
     <%
         ArrayList<Prodotto> tuttiProdotti = (ArrayList<Prodotto>) request.getAttribute("tuttiProdotti");
     %>
-    <link rel="stylesheet" type="text/css" href="ParteCSS/CategorieProdotti.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ParteCSS/CategorieProdotti.css">
     <style>
         @media screen and (max-width: 1100px) {
             .topnav a:not(:first-child), .dropdown .dropbtn {

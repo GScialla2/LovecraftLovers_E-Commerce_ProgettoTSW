@@ -4,116 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="ParteCSS/Filter.css">
-
-
+    <title>Filtro Prodotti</title>
 </head>
 <body>
 <div id="mySidebar" class="sidebar">
     <form action="FiltraggioServletPrezzo">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-           style="text-decoration: none;width: 5px;height: 5px; color: white">&#x2715</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#x2715;</a>
         <label for="prezzomin">Prezzo minimo:</label>
         <input type="text" id="prezzomin" name="prezzomin">
-        <label id="prezzoMaxLab" for="prezzomax">Prezzo massimo:</label>
+        <label for="prezzomax">Prezzo massimo:</label>
         <input type="text" id="prezzomax" name="prezzomax">
-        <button id="filtra" onclick="return(validate())" value="filtra">Filtra</button>
-    </form>
-
-
-    <label style="float: left">Prodotto:</label>
-    <select style="float: left" name="Materiale" id="prodottoSelezione" onChange="getProdotto(this.value)">
-        <option>Selezionare....</option>
-        <option value="actionFigure">Action Figure</option>
-        <option value="appoggioActionFigure">Appoggio Action Figure</option>
-        <option value="Clothes">Clothes</option>
-    </select>
-    <label style="float: left">Materiale:</label>
-    <select style="float: left" name="MatSelezione" id="MatSelezione" onChange="getMateriale(this.value)"></select>
-    <form action="MaterialeServlet">
-        <button style="margin-left: 4px" type="submit">Premi</button>
+        <button id="filtra" onclick="return validate()" value="filtra">Filtra</button>
     </form>
 </div>
 
 <div style="padding: 3px">
-    <button class="openbtn" onclick="openNav(window.matchMedia('(max-width: 700px'))">Filtra</button>
+    <button class="openbtn" onclick="openNav()">Filtra</button>
 </div>
 
 <script>
-
-    function openNav(x)
-    {
-        if(x.matches)
-        {
-            document.getElementById("mySidebar").style.width = "400px";
-            document.getElementById("mySidebar").style.height="120px";
-            document.getElementById("main").style.marginLeft = "160px";
-        }
-        else
-        {
+    function openNav() {
+        var x = window.matchMedia("(max-width: 500px)");
+        if (x.matches) {
+            document.getElementById("mySidebar").style.width = "500px";
+            document.getElementById("mySidebar").style.height = "50px";
+        } else {
             document.getElementById("mySidebar").style.width = "700px";
-            document.getElementById("mySidebar").style.height="135px";
-            document.getElementById("main").style.marginLeft = "160px";
+            document.getElementById("mySidebar").style.height = "60px";
         }
     }
 
-    function closeNav()
-    {
-        document.getElementById("mySidebar").style.width = "0"
-        document.getElementById("main").style.marginLeft = "0";
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
     }
 
-    function validate()
-    {
+    function validate() {
         var min = document.getElementById('prezzomin').value;
         var max = document.getElementById('prezzomax').value;
         var minRGEX = /^[0-9]*$/;
         var maxRGEX = /^[0-9]*$/;
-        var minResult = minRGEX.test(min);
-        var maxResult = maxRGEX.test(max);
-
-        if(minResult == false)
-        {
+        if (!minRGEX.test(min)) {
             alert("Inserire un valore valido per il valore minimo");
             return false;
         }
-
-        if(maxResult == false)
-        {
-            alert("Inserire un valore valido per il valore massimo")
+        if (!maxRGEX.test(max)) {
+            alert("Inserire un valore valido per il valore massimo");
             return false;
         }
-
         return true;
-
-    }
-
-    function getProdotto(prod)
-    {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function()
-        {
-            if(this.readyState == 4 && this.status == 200)
-            {
-                document.getElementById("MatSelezione").innerHTML = this.responseText;
-            }
-        };
-        xhttp.open("GET","FiltraggioServletMateriale?prodotto"+prod, true);
-        xhttp.send();
-    }
-
-    function getMateriale(mat)
-    {
-        var prod = document.getElementById("prodottoSelezione").value;
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function()
-        {
-            if(this.readyState == 4 && this.status == 200)
-            {
-                document.getElementById("MatSelezione").innerHTML = this.responseText;
-            }
-        };
-        xhttp.open("GET","FiltraggioServletMateriale?materiale"+mat+"&"+"prodotto="+prod,true);
-        xhttp.send();
     }
 </script>
 </body>

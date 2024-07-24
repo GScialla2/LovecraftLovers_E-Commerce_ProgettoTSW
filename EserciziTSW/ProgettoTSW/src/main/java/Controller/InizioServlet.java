@@ -38,7 +38,6 @@ public class InizioServlet extends HttpServlet
             RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/results/Contatti.jsp");
             dispatcher.forward(request,response);
         }
-
         HttpSession session = request.getSession();
         session.setAttribute("filtri", richiesta);
         ArrayList<Prodotto> prodottiCategoria = new ArrayList<Prodotto>();

@@ -7,7 +7,7 @@
     <%
         ArrayList<Prodotto> tuttiProdotti = (ArrayList<Prodotto>) request.getAttribute("CategorieProdotti");
     %>
-    <link rel="stylesheet" type="text/css" href="ParteCSS/CategorieProdotti.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ParteCSS/CategorieProdotti.css">
     <title><%=request.getAttribute("Categoria")%></title>
 </head>
 <body>

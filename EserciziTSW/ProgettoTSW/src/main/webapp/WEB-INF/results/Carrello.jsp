@@ -65,7 +65,7 @@ else if(carrello!=null || carrello.size()==0)
             {%>
             <tr>
                 <th>
-                    <form method="post" action="PagamentoServlet">
+                    <form method="post" action="${pageContext.request.contextPath}/PagamentoServlet">
                         <button class="cart" type="submit">
                             <i class="fa fa-credit-card"></i></button>
                     </form>
