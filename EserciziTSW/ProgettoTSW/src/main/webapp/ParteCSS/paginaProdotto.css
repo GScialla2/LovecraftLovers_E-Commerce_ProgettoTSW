@@ -5,7 +5,7 @@ table, td, th {
 
 button{
     cursor: pointer;
-    margin: 5px;
+    margin: 5px auto;
     background: none;
     border: none;
     display: flex;
@@ -25,6 +25,9 @@ button{
     font-size: 15px;
     border: 2px solid black;
     display: block;
-    left: 30%;
-    right: 30%;
+}
+
+.info{
+    border: 3px solid green;
+    margin: 10px 0;
 }

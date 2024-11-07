@@ -70,9 +70,9 @@ INSERT INTO Prodotto VALUES
 ("MPM11","ActionFigure","Azathoth1","Statuetta del grande dio cieco e stupido al centro dell'universo Azathoth",30,30,80,10,"DeiEsterni",null,null,null,null,null,null,null,null,null),
 ("MPM12","ActionFigure","Azathoth2","Statuetta rappresentante la seconda forma di Azathoth",25,30,80,10,"DeiEsterni",null,null,null,null,null,null,null,null,null),
 ("MPM13","ActionFigure","Nyarlathothep","Statuetta raffigurante il caos strisciante Nyarlathothep",25,40,100,10,"DeiEsterni",null,null,null,null,null,null,null,null,null),
-("LCM14","Libri","LovecraftReloaded","Romanzo di Alessandro Manzetti e Paolo DiOrazio basato sui racconti di Lovecraft",30,30,15,10,null,"Romanzo","EC edizioni collection",null,null,null,null,null,null,null),
-("LCM15","Libri","Le montagne della follia","Romanzo breve fi HPL ambientato nella misteriosa antartide",30,30,15,10,null,"Romanzo","Classic house book",null,null,null,null,null,null,null),
-("LCP16","Libri","L'abitatore del buio","Romanzo illustrato dal mangaka Gou Tanabe basato sul racconto l'abitatore del buio di HPL",20,20,13,10,null,"Romanzo","J-Pop",null,null,null,null,null,null,null);
+("LCM14","Libri","LovecraftReloaded","Romanzo di Alessandro Manzetti e Paolo DiOrazio basato sui racconti di Lovecraft",30,30,15,10,null,"Romanzi","EC edizioni collection",null,null,null,null,null,null,null),
+("LCM15","Libri","Le montagne della follia","Romanzo breve fi HPL ambientato nella misteriosa antartide",30,30,15,10,null,"Romanzi","Classic house book",null,null,null,null,null,null,null),
+("LCP16","Libri","L'abitatore del buio","Romanzo illustrato dal mangaka Gou Tanabe basato sul racconto l'abitatore del buio di HPL",20,20,13,10,null,"Romanzi","J-Pop",null,null,null,null,null,null,null),
 ("LCP17","Libri","Il caso di Charles Dexter Ward","Romanzo breve tra i più famosi di HPL che definisce alla perfezione il concetto di orrore cosmico",30,30,15,10,null,"Romanzi","PLR",null,null,null,null,null,null,null),
 ("LCS18","Libri","Il colore venuto dallo spazio","Romanzo breve in cui viene presentato l'enigmatico e orribile colore venuto dall'universo più remoto",30,30,15,10,null,"Romanzi","Mondadori",null,null,null,null,null,null,null),
 ("LCS19","Libri","Il grande libro di H.P.Lovecraft","Raccolta di racconti del solitario di providence a cura di Sebastiano Fusco",50,50,30,10,null,"Raccolte di racconti",null,null,null,null,null,null,null),
@@ -111,5 +111,3 @@ INSERT INTO Prodotto VALUES
 ("LPM52","Libri","Richard Upton Pickman diari e lettere","Raccolta di lettere e diari del personaggio di finzione ideato da HPL: il pittore Pickman",30,30,20,10,"Lettere","Blackhouse",null,null,null,null,null,null,null),
 ("DC053","GioielliDiBigiotteria","Collana Azathoth2","Collana con ciondolo Azathoth",10,10,5,10,null,null,null,"Nero","Collane",null,null,null),
 ("DC054","GioielliDiBigiotteria","Ciondolo strani eoni","Ciondolo con incisa la celebre citazione di Lovecraft: E col passare di strani eoni anche la morte può morire",10,10,5,10,null,null,null,"Oro","Collane",null,null,null);
-
-

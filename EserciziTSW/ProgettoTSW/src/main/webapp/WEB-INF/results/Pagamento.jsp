@@ -79,7 +79,7 @@
         </tr>
         <th>
             <button onclick="return confermaParametri()" type="submit" class="cart"><i class="fa fa-credit-card"></i></button>
-            <button type="submit" class="cart" onclick="window.location.href='HomePage'"><i class="fa fa-home"></i></button>
+            <button type="submit" class="cart" onclick="window.location.href='./'"><i class="fa fa-home"></i></button>
         </th>
     </table>
 </form>

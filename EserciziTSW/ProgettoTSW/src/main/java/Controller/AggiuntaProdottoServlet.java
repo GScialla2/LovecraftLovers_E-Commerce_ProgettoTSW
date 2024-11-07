@@ -6,7 +6,7 @@ import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import java.io.IOException;
-@WebServlet(name = "AggiuntaProdottoServlet")
+@WebServlet( "/AggiuntaProdottoServlet")
 public class AggiuntaProdottoServlet extends HttpServlet
 {
     @Override

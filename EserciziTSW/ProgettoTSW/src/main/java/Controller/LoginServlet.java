@@ -7,14 +7,16 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import org.json.JSONObject;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet
 {
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    /* protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         String parametri;
         HttpSession session = request.getSession();
@@ -30,8 +32,10 @@ public class LoginServlet extends HttpServlet
             }
             else if (u != null && !u.isAmministratore())
             {
+                session.invalidate();
+                session = request.getSession();
                 session.setAttribute("Utente", u);
-                RequestDispatcher ds = request.getRequestDispatcher("HomePage");
+                RequestDispatcher ds = request.getRequestDispatcher("");
                 ds.forward(request, response);
             }
             else if (u != null && u.isAmministratore())
@@ -44,7 +48,7 @@ public class LoginServlet extends HttpServlet
         else if(request.getParameter("action").equals("logout"))
         {
             session.invalidate();
-            RequestDispatcher dispatcher = request.getRequestDispatcher("HomePage");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("");
             dispatcher.forward(request, response);
         }
         else if(request.getParameter("action").equals("carrello"))
@@ -61,8 +65,53 @@ public class LoginServlet extends HttpServlet
             dispatcher.forward(request, response);
         }
 
-    }
+    } */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String action = request.getParameter("action");
+        String email = request.getParameter("Email");
+        String password = request.getParameter("Password");
+        HttpSession session = request.getSession();
 
+        Utente u = UtenteDAO.doLogin(email, password);
+        PrintWriter out = response.getWriter();
+        if (action == null) {
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+
+            if (u == null) {
+                // Login fallito
+                out.write("{\"message\":\"Password o Email errata!\"}");
+            } else if (!u.isAmministratore()) {
+                // Login riuscito
+                session.setAttribute("Utente", u);
+                out.write("{\"message\":\"Login effettuato\"}");
+            } else {
+                session.setAttribute("Amministratore", u);
+                out.write("{\"message\":\"Login amministratore effettuato\"}");
+            }
+        } else {
+            // Altri casi come logout, carrello, etc. mantenuti uguali
+            if ("logout".equals(action)) {
+                session.invalidate();
+                RequestDispatcher dispatcher = request.getRequestDispatcher("");
+                dispatcher.forward(request, response);
+            } else if ("carrello".equals(action)) {
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/results/Carrello.jsp");
+                dispatcher.forward(request, response);
+            } else if ("riepilogo".equals(action)) {
+                Utente utente = (Utente) session.getAttribute("Utente");
+                if (utente != null) {
+                    ArrayList<AcquistoProdotti> riepilogoProdotti = AcquistoProdottiDAO.doRetriveAcquistoUtente(utente.getEmail());
+                    request.setAttribute("riepiloOrdineUtente", riepilogoProdotti);
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/results/RiepilogoAcquisti.jsp");
+                    dispatcher.forward(request, response);
+                } else {
+                    response.sendRedirect("");  // reindirizza alla homepage se l'utente non è loggato
+                }
+            }
+
+        }
+    }
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doPost(req,resp);

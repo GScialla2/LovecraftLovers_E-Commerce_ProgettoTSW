@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.util.ArrayList;
 @WebServlet("/InizioServlet")
@@ -41,7 +42,15 @@ public class InizioServlet extends HttpServlet
         HttpSession session = request.getSession();
         session.setAttribute("filtri", richiesta);
         ArrayList<Prodotto> prodottiCategoria = new ArrayList<Prodotto>();
-        prodottiCategoria = ProdottoDAO.doRetriveByCategoria(richiesta);
+        String tipo = request.getParameter("tipo");
+        if (tipo == null)
+        {
+            prodottiCategoria = ProdottoDAO.doRetriveByCategoria(richiesta);
+        }
+        else
+        {
+            prodottiCategoria = ProdottoDAO.doRetriveByCategoriaTipo(richiesta , tipo);
+        }
         request.setAttribute(richiesta, prodottiCategoria);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/results/Prodotti.jsp");
         dispatcher.forward(request, response);

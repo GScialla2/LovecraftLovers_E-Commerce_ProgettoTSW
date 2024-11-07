@@ -4,6 +4,11 @@
     <option name="state">
       <map>
         <entry key="file://$PROJECT_DIR$/src/main/webapp/ParteHTML/Filter.html" value="file://$PROJECT_DIR$/src/main/webapp/ParteHTML" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/ParteHTML/navBar.jsp" value="file://$PROJECT_DIR$/src/main/webapp/ParteHTML" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/amministratore/VisualizzaUtenti.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/amministratore" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/results/HomePage.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/results" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/results/Login.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/results" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/results/Prodotto.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/results" />
       </map>
     </option>
   </component>

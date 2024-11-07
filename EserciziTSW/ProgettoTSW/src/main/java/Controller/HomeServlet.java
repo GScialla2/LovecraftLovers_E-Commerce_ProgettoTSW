@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
-@WebServlet("/HomePage")
+@WebServlet("")
 public class HomeServlet extends HttpServlet
 {
     @Override

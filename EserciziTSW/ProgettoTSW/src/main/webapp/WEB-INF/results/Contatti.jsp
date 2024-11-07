@@ -2,65 +2,51 @@
 <html>
 <head>
     <title>Contatti</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="ParteCSS/Contatti.css">
     <script>
-        $(document).ready(function(){
-            $("#1").mouseenter(function () {
-                $("#1").css("color","#058c42");
-            });
-            $("#1").mouseleave(function(){
-                $("#1").css("color", "black");
-            });
-        });
+        document.addEventListener("DOMContentLoaded", function () {
+            var elements = ["1", "2", "3", "4", "5"];
 
-        $(document).ready(function(){
-            $("#2").mouseenter(function () {
-                $("#2").css("color","#058c42");
-            });
-            $("#2").mouseleave(function(){
-                $("#2").css("color", "black");
-            });
-        });
+            elements.forEach(function (id) {
+                var element = document.getElementById(id);
+                if (element) {
+                    element.addEventListener("mouseenter", function () {
+                        element.style.color = "#058c42";
+                    });
 
-        $(document).ready(function(){
-            $("#3").mouseenter(function () {
-                $("#3").css("color","#058c42");
+                    element.addEventListener("mouseleave", function () {
+                        element.style.color = "black";
+                    });
+                }
             });
-            $("#3").mouseleave(function(){
-                $("#3").css("color", "black");
-            });
-        });
 
-        $(document).ready(function(){
-            $("#4").mouseenter(function () {
-                $("#4").css("color","#058c42");
-            });
-            $("#4").mouseleave(function(){
-                $("#4").css("color", "black");
-            });
-        });
+            // Nascondi inizialmente l'elemento con id "5"
+            var element5 = document.getElementById("5");
+            if (element5) {
+                element5.style.display = "none";
+                element5.style.color = "transparent";
+                element5.style.overflow = "hidden"; // Necessario per l'animazione di scorrimento
+                element5.style.height = "0"; // Imposta l'altezza a 0 per nasconderlo
+                element5.style.transition = "height 0.5s ease"; // Aggiungi transizione all'altezza
+            }
 
-        $(document).ready(function(){
-            $("#5").mouseenter(function () {
-                $("#5").css("color","#058c42");
-            });
-            $("#5").mouseleave(function(){
-                $("#5").css("color", "black");
-            });
-        });
-
-        $(document).ready(function(){
-            $("#5").css("display","none");
-            $("#5").css("color","transparent");
-        });
-
-        $(document).ready(function(){
-            $("#chiSiamo").click(function(){
-                $("#5").slideToggle("slow");
-                $("#5").css("color","black");
-                $("#5").css("font-weight","bold");
-            });
+            // Aggiungi l'evento click per il bottone "chiSiamo"
+            var chiSiamo = document.getElementById("chiSiamo");
+            if (chiSiamo) {
+                chiSiamo.addEventListener("click", function () {
+                    if (element5.style.height === "0px" || element5.style.display === "none") {
+                        element5.style.display = "block"; // Assicurati che sia visibile
+                        element5.style.height = element5.scrollHeight + "px"; // Imposta l'altezza al contenuto
+                    } else {
+                        element5.style.height = "0px"; // Riduci l'altezza a 0 per nasconderlo
+                        setTimeout(function () {
+                            element5.style.display = "none"; // Nascondi l'elemento dopo l'animazione
+                        }, 500); // Il timeout deve corrispondere alla durata della transizione
+                    }
+                    element5.style.color = "black";
+                    element5.style.fontWeight = "bold";
+                });
+            }
         });
 
     </script>
@@ -80,7 +66,7 @@
         <th><p id="3">lovecraft.lovers@libero.it</p></th>
         <th><p id="4">Lun - Ven 09:30 - 18:00 <br> Sabato 09:00 - 13:00 <br> Domenica chiuso</p></th>
         <td><button id="chiSiamo" class="cart">Chi siamo</button></td>
-        <td><button class="cart" onclick="window.location.href='HomePage'">HomePage</button></td>
+        <td><button class="cart" onclick="window.location.href='./'">HomePage</button></td>
     </tr>
 </table>
 <p id="5">Ci occupiamo della vendita di action figure dediacate a lovecraft , vestiti in stile lovecraftiano e varie raccolte e adattamenti delle opere letterarie del solitario di Providence a Liberi, in provincia di Caserta.<br> <br>

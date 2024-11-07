@@ -4,6 +4,10 @@ table, td, th {
     margin: 5% 50% 2% 40%;
 }
 
+tbody{
+    text-align: center;
+}
+
 table tr th button {
     cursor: pointer;
     margin: 5px;
@@ -20,12 +24,11 @@ table tr th button {
 }
 
 .cart {
+    margin: 5px auto;
     background: #058c42;
     border-radius: 10px;
     color: white;
     font-size: 15px;
     border: 2px solid black;
     display: block;
-    left: 30%;
-    right: 30%;
 }

@@ -64,17 +64,17 @@
 <img src="immagini/logosito.png" class="sfondo">
 <div class="topnav" id="myTopnav">
     <div class="dropdown">
-        <a href="${pageContext.request.contextPath}/HomePage"><i class="fa fa-home"></i></a>
+        <a href="${pageContext.request.contextPath}/"><i class="fa fa-home"></i></a>
     </div>
     <div class="dropdown">
         <button class="dropbtn" onclick="window.location.href='${pageContext.request.contextPath}/InizioServlet?action=Libri'">Libri
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="${pageContext.request.contextPath}/InizioServlet?action=Romanzi">Romanzi</a>
-            <a href="${pageContext.request.contextPath}/InizioServlet?action=RaccolteDiRacconti">Raccolte di racconti</a>
-            <a href="${pageContext.request.contextPath}/InizioServlet?action=Lettere">Lettere</a>
-            <a href="${pageContext.request.contextPath}/InizioServlet?action=Cicli">Cicli</a>
+            <a href="${pageContext.request.contextPath}/InizioServlet?action=Libri&tipo=Romanzi">Romanzi</a>
+            <a href="${pageContext.request.contextPath}/InizioServlet?action=Libri&tipo=Raccolte di racconti">Raccolte di racconti</a>
+            <a href="${pageContext.request.contextPath}/InizioServlet?action=Libri&tipo=Lettere">Lettere</a>
+            <a href="${pageContext.request.contextPath}/InizioServlet?action=Libri&tipo=Cicli">Cicli</a>
         </div>
     </div>
 
@@ -83,20 +83,14 @@
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="${pageContext.request.contextPath}/InizioServlet?action=GrandiAntichi">Grandi Antichi</a>
-            <a href="${pageContext.request.contextPath}/InizioServlet?action=DeiEsterni">Dei Esterni</a>
-            <a href="${pageContext.request.contextPath}/InizioServlet?action=AlieniECreatureDelFolklore">Aliene e creature del folklore</a>
+            <a href="${pageContext.request.contextPath}/InizioServlet?action=ActionFigure&tipo=GrandiAntichi">Grandi Antichi</a>
+            <a href="${pageContext.request.contextPath}/InizioServlet?action=ActionFigure&tipo=DeiEsterni">Dei Esterni</a>
+            <a href="${pageContext.request.contextPath}/InizioServlet?action=ActionFigure&tipo=Alieni e creature del folklore">Aliene e creature del folklore</a>
         </div>
     </div>
     <div class="dropdown">
         <button class="dropbtn" onclick="window.location.href='${pageContext.request.contextPath}/InizioServlet?action=AppoggiActionFigure'">Appoggi Action Figure
-            <i class="fa fa-caret-down"></i>
         </button>
-        <div class="dropdown-content">
-            <a href="${pageContext.request.contextPath}/InizioServlet?action=AppoggiClassici">Appoggi classici</a>
-            <a href="${pageContext.request.contextPath}/InizioServlet?action=AppoggiABraccio">Appoggi a braccio</a>
-            <a href="${pageContext.request.contextPath}/InizioServlet?action=AppoggiAPiedistallo">Appoggi a piedistallo</a>
-        </div>
     </div>
 
     <div class="dropdown">
@@ -104,9 +98,9 @@
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="${pageContext.request.contextPath}/InizioServlet?action=Collane">Collane</a>
-            <a href="${pageContext.request.contextPath}/InizioServlet?action=Bracciali">Bracciali</a>
-            <a href="${pageContext.request.contextPath}/InizioServlet?action=Anelli">Anelli</a>
+            <a href="${pageContext.request.contextPath}/InizioServlet?action=GioielliDiBigiotteria&tipo=Collane">Collane</a>
+            <a href="${pageContext.request.contextPath}/InizioServlet?action=GioielliDiBigiotteria&tipo=Bracciali">Bracciali</a>
+            <a href="${pageContext.request.contextPath}/InizioServlet?action=GioielliDiBigiotteria&tipo=Anelli">Anelli</a>
         </div>
     </div>
 
@@ -115,10 +109,10 @@
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="${pageContext.request.contextPath}/InizioServlet?action=Felpe">Felpe</a>
-            <a href="${pageContext.request.contextPath}/InizioServlet?action=MaglieAManicaLunga">Maglie a manica lunga</a>
-            <a href="${pageContext.request.contextPath}/InizioServlet?action=Camicie">Camicie</a>
-            <a href="${pageContext.request.contextPath}/InizioServlet?action=T-Shirt">T-Shirt</a>
+            <a href="${pageContext.request.contextPath}/InizioServlet?action=Clothes&tipo=Felpe">Felpe</a>
+            <a href="${pageContext.request.contextPath}/InizioServlet?action=Clothes&tipo=Maglie a manica lunga">Maglie a manica lunga</a>
+            <a href="${pageContext.request.contextPath}/InizioServlet?action=Clothes&tipo=Camicie">Camicie</a>
+            <a href="${pageContext.request.contextPath}/InizioServlet?action=Clothes&tipo=T-Shirt">T-Shirt</a>
         </div>
     </div>
 
@@ -149,13 +143,15 @@
         <a style="text-underline: none; pointer-events: none">Bentornato, <%=u.getNome()%></a>
     </div>
     <%}%>
-    <%if(session.getAttribute("Utente")!=null)
-    {%>
+    <%--<%if(session.getAttribute("Utente")!=null)
+    {%>--%>
     <div class="dropdown">
         <button class="dropbtn" onclick="window.location.href='${pageContext.request.contextPath}/LoginServlet?action=carrello'">
             <i class="fa fa-shopping-cart"></i>
         </button>
     </div>
+    <%if(session.getAttribute("Utente")!=null)
+    {%>
     <div class="dropdown">
         <button class="dropbtn" onclick="window.location.href='${pageContext.request.contextPath}/LoginServlet?action=riepilogo'">
             <i class="fa fa-truck"></i>

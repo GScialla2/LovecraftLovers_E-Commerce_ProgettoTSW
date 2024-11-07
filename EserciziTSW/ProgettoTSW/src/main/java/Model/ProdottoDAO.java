@@ -43,6 +43,88 @@ public class ProdottoDAO extends HttpServlet
             throw new RuntimeException(e);
         }
     }
+
+    public static ArrayList<Prodotto> doRetriveByCategoriaTipo(String categoria,String tipo)
+    {
+        ArrayList<Prodotto> elencoProdotti = new ArrayList<Prodotto>();
+        try(Connection con = ConPool.getConnection())
+        {
+            String query = "Select * From Prodotto Where nomeCategoria = ? and ";
+            String tipoLibri[] = {"Romanzi","Raccolte di racconti", "Lettere", "Cicli"};
+            String tipoActionFigure[] = {"GrandiAntichi" , "DeiEsterni" , "Alieni e creature del folklore"};
+            String tipoGioiello[] = {"Collane" , "Bracciali" , "Anelli"};
+            String tipoCloth[] = {"Felpe","Maglie a manica lunga","Camicie","T-Shirt"};
+            PreparedStatement ps = null;
+            for(int i = 0;  i < 4; i++) {
+                if(tipo.equals(tipoLibri[i])) {
+                    query += "TipoLibro = ? and tipoActionFigure is NULL And  tipoCloth is NULL And tipoGioiello is NULL";
+                    ps = con.prepareStatement(query);
+                    ps.setString(1,"Libri");
+                    ps.setString(2,tipoLibri[i]);
+                    break;
+                }
+            }
+            for(int i = 0; i<3; i++)
+            {
+                if(tipo.equals(tipoActionFigure[i])) {
+                    query += "TipoLibro is NULL and tipoActionFigure = ? And  tipoCloth is NULL And tipoGioiello is NULL";
+                    ps = con.prepareStatement(query);
+                    ps.setString(1,"ActionFigure");
+                    ps.setString(2,tipoActionFigure[i]);
+                    break;
+                }
+            }
+            for(int i = 0; i<3; i++)
+            {
+                if(tipo.equals(tipoGioiello[i])) {
+                    query += "TipoLibro is NULL and tipoActionFigure is NUll And  tipoCloth is NULL And tipoGioiello = ?";
+                    ps = con.prepareStatement(query);
+                    ps.setString(1,"GioielliDiBigiotteria");
+                    ps.setString(2,tipoGioiello[i]);
+                    break;
+                }
+            }
+            for(int i = 0;  i < 4; i++) {
+                if(tipo.equals(tipoCloth[i])) {
+                    query += "TipoLibro is NULL and tipoActionFigure is NULL And  tipoCloth = ? And tipoGioiello is NULL";
+                    ps = con.prepareStatement(query);
+                    ps.setString(1,"Clothes");
+                    ps.setString(2,tipoCloth[i]);
+                    break;
+                }
+            }
+            ResultSet rs = ps.executeQuery();
+            while(rs.next())
+            {
+                Prodotto p = new Prodotto();
+                p.setIdProdotto(rs.getString(1));
+                p.setNomeCategoria(rs.getString(2));
+                p.setNomeProd(rs.getString(3));
+                p.setDescrizione(rs.getString(4));
+                p.setLarghezza(rs.getDouble(5));
+                p.setLunghezza(rs.getDouble(6));
+                p.setPrezzo(rs.getDouble(7));
+                p.setQuantita(rs.getInt(8));
+                p.setTipoActionFigure(rs.getString(9));
+                p.setMaterialeAppoggio(rs.getString(10));
+                p.setTipoLibro(rs.getString(11));
+                p.setEditoreLibro(rs.getString(12));
+                p.setColoreGioiello(rs.getString(13));
+                p.setTipoGioiello(rs.getString(14));
+                p.setTipoStoffa(rs.getString(15));
+                p.setMaterialeCloth(rs.getString(16));
+                p.setTipoCloth(rs.getString(17));
+                elencoProdotti.add(p);
+            }
+            System.out.println(elencoProdotti.size());
+            System.out.println(tipo);
+            return elencoProdotti;
+        }
+        catch(SQLException e)
+        {
+            throw new RuntimeException(e);
+        }
+    }
     public static ArrayList<Prodotto> doRetriveAll()
     {
         ArrayList<Prodotto> elencoProdotti = new ArrayList<Prodotto>();
@@ -244,7 +326,7 @@ public class ProdottoDAO extends HttpServlet
     {
         try (Connection con = ConPool.getConnection())
         {
-            PreparedStatement ps = con.prepareStatement("INSERT INTO Prodotto (idProdotto,nomeCategoria,nomeProd,descrizione,larghezza,lunghezza,prezzo,quantita,tipoMaterialeActionFigure ,tipoAppoggio, coloreAppoggio ,materialeAppoggio,editoreActionFigure,tipoActionFigure,tipoStoffaPupazzo,materialeOcchiPupazzo,tipoCreaturaPupazzo) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement ps = con.prepareStatement("INSERT INTO Prodotto (idProdotto,nomeCategoria,nomeProd,descrizione,larghezza,lunghezza,prezzo,quantita,tipoActionFigure,tipoLibro,editoreLibro,materialeAppoggio, coloreGioiello ,tipoGioiello,tipoStoffa,materialeCloth,tipoCloth) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, p.getIdProdotto());
             ps.setString(2, p.getNomeCategoria());
             ps.setString(3, p.getNomeProd());
@@ -254,9 +336,9 @@ public class ProdottoDAO extends HttpServlet
             ps.setDouble(7, p.getPrezzo());
             ps.setInt(8, p.getQuantita());
             ps.setString(9, p.getTipoActionFigure());
-            ps.setString(10, p.getMaterialeAppoggio());
-            ps.setString(11, p.getTipoLibro());
-            ps.setString(12, p.getEditoreLibro());
+            ps.setString(10, p.getTipoLibro());
+            ps.setString(11, p.getEditoreLibro());
+            ps.setString(12, p.getMaterialeAppoggio());
             ps.setString(13, p.getColoreGioiello());
             ps.setString(14, p.getTipoGioiello());
             ps.setString(15, p.getTipoStoffa());

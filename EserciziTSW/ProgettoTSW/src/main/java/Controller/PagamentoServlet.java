@@ -16,7 +16,13 @@ public class PagamentoServlet extends HttpServlet
     @Override
     protected void doPost(HttpServletRequest request , HttpServletResponse response) throws ServletException, IOException
     {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/results/Pagamento.jsp");
+        HttpSession session = request.getSession();
+        if(session.getAttribute("Utente")!=null)
+        {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/results/Pagamento.jsp");
+            dispatcher.forward(request,response);
+        }
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/results/Login.jsp");
         dispatcher.forward(request,response);
     }
 }

@@ -72,10 +72,10 @@
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="InizioServlet?action=Romanzi">Romanzi</a>
-            <a href="InizioServlet?action=RaccolteDiRacconti">Raccolte di racconti</a>
-            <a href="InizioServlet?action=Lettere">Lettere</a>
-            <a href="InizioServlet?action=Cicli">Cicli</a>
+            <a href="InizioServlet?action=Libri&tipo=Romanzi">Romanzi</a>
+            <a href="InizioServlet?action=Libri&tipo=RaccolteDiRacconti">Raccolte di racconti</a>
+            <a href="InizioServlet?action=Libri&tipo=Lettere">Lettere</a>
+            <a href="InizioServlet?action=Libri&tipo=Cicli">Cicli</a>
         </div>
     </div>
 
@@ -84,20 +84,14 @@
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="InizioServlet?action=GrandiAntichi">Grandi Antichi</a>
-            <a href="InizioServlet?action=DeiEsterni">Dei Esterni</a>
-            <a href="InizioServlet?action=AlieniECreatureDelFolklore">Alieni e creature del folklore</a>
+            <a href="InizioServlet?action=ActionFigure&tipo=GrandiAntichi">Grandi Antichi</a>
+            <a href="InizioServlet?action=ActionFigure&tipo=DeiEsterni">Dei Esterni</a>
+            <a href="InizioServlet?action=ActionFigure&tipo=Alieni e c reature del folklore">Alieni e creature del folklore</a>
         </div>
     </div>
     <div class="dropdown">
         <button class="dropbtn" onclick="window.location.href='InizioServlet?action=AppoggiActionFigure'">Appoggi Action Figure
-            <i class="fa fa-caret-down"></i>
         </button>
-        <div class="dropdown-content">
-            <a href="InizioServlet?action=AppoggiClassici">Appoggi classici</a>
-            <a href="InizioServlet?action=AppoggiABraccio">Appoggi a braccio</a>
-            <a href="InizioServlet?action=AppoggiAPiedistallo">Appoggi a piedistallo</a>
-        </div>
     </div>
 
     <div class="dropdown">
@@ -105,9 +99,9 @@
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="InizioServlet?action=Collane">Collane</a>
-            <a href="InizioServlet?action=Bracciali">Bracciali</a>
-            <a href="InizioServlet?action=Anelli">Anelli</a>
+            <a href="InizioServlet?action=GioielliDiBigiotteria&tipo=Collane">Collane</a>
+            <a href="InizioServlet?action=GioielliDiBigiotteria&action=Bracciali">Bracciali</a>
+            <a href="InizioServlet?action=GioielliDiBigiotteria&action=Anelli">Anelli</a>
         </div>
     </div>
 
@@ -116,10 +110,10 @@
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="InizioServlet?action=Felpe">Felpe</a>
-            <a href="InizioServlet?action=MaglieAManicaLunga">Maglie a manica lunga</a>
-            <a href="InizioServlet?action=Camicie">Camicie</a>
-            <a href="InizioServlet?action=T-Shirt">T-Shirt</a>
+            <a href="InizioServlet?action=Clothes&tipo=Felpe">Felpe</a>
+            <a href="InizioServlet?action=Clothes&tipo=Maglie a manica lunga">Maglie a manica lunga</a>
+            <a href="InizioServlet?action=Clothes&tipo=Camicie">Camicie</a>
+            <a href="InizioServlet?action=Clothes&tipo=T-Shirt">T-Shirt</a>
         </div>
     </div>
 
@@ -138,7 +132,7 @@
         </button>
     </div>
     <%}
-    else
+        else
     {%>
     <div class="dropdown">
         <button class="dropbtn" onclick="window.location.href='LoginServlet?action=logout'">
@@ -150,13 +144,15 @@
         <a style="text-underline: none; pointer-events: none">Bentornato, <%=u.getNome()%></a>
     </div>
     <%}%>
-    <%if(session.getAttribute("Utente")!=null)
-    {%>
+    <%--<%if(session.getAttribute("Utente")!=null)
+    {%>--%>
     <div class="dropdown">
         <button class="dropbtn" onclick="window.location.href='LoginServlet?action=carrello'">
             <i class="fa fa-shopping-cart"></i>
         </button>
     </div>
+    <%if(session.getAttribute("Utente")!=null)
+    {%>
     <div class="dropdown">
         <button class="dropbtn" onclick="window.location.href='LoginServlet?action=riepilogo'">
             <i class="fa fa-truck"></i>

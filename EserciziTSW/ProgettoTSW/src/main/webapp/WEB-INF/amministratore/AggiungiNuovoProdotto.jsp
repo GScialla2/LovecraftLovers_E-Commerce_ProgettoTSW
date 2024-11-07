@@ -155,7 +155,7 @@
     </style>
 </head>
 <body>
-<form method="post" action="Controller/AggiuntaProdottoServlet">
+<form method="post" action="./AggiuntaProdottoServlet">
     <table>
         <tr>
             <th class="inserimento1">

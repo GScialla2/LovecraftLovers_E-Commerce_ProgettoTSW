@@ -21,14 +21,13 @@ table tr th button {
 }
 
 .cart {
+    margin: 5px auto;
     background: #058c42;
     border-radius: 10px;
     color: white;
     font-size: 15px;
     border: 2px solid black;
     display: block;
-    left: 30%;
-    right: 30%;
 }
 
 body {

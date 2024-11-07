@@ -55,62 +55,30 @@
 <body>
 <img src="immagini/logosito.png" class="sfondo">
 <div class="topnav" id="myTopnav">
-    <a href="../HomeServletAmministratore" class="active"><i class="fa fa-home"></i></a>
+    <a href="./HomeServletAmministratore" class="active"><i class="fa fa-home"></i></a>
     <div class="dropdown">
         <button class="dropbtn" onclick="window.location.href='InizioServlet?valore=Libri'">Libri
-            <i class="fa fa-caret-down"></i>
         </button>
-        <div class="dropdown-content">
-            <a href="InizioServlet?valore=Romanzi">Romanzi</a>
-            <a href="InizioServlet?valore=RaccolteDiRacconti">Raccolte di racconti</a>
-            <a href="InizioServlet?valore=Lettere">Lettere</a>
-            <a href="InizioServlet?valore=Cicli">Cicli</a>
-        </div>
     </div>
 
     <div class="dropdown">
         <button class="dropbtn" onclick="window.location.href='InizioServlet?valore=ActionFigure'">Action Figure
-            <i class="fa fa-caret-down"></i>
         </button>
-        <div class="dropdown-content">
-            <a href="InizioServlet?valore=GrandiAntichi">Grandi Antichi</a>
-            <a href="InizioServlet?valore=DeiEsterni">Dei esterni</a>
-            <a href="InizioServlet?valore=AlieniECreatureDelFolklore">Alieni e creature del folklore</a>
-        </div>
     </div>
 
     <div class="dropdown">
         <button class="dropbtn" onclick="window.location.href='InizioServlet?valore=AppoggiActionFigure'">Appoggi action figure
-            <i class="fa fa-caret-down"></i>
         </button>
-        <div class="dropdown-content">
-            <a href="InizioServlet?valore=AppoggiClassici">Appoggi classici</a>
-            <a href="InizioServlet?valore=AppoggiABraccio">Appoggi a braccio</a>
-            <a href="InizioServlet?valore=AppoggiAPiedistallo">Appoggi a piedistallo</a>
-        </div>
     </div>
 
     <div class="dropdown">
         <button class="dropbtn" onclick="window.location.href='InizioServlet?valore=GioielliDiBigiotteria'">Gioielli di bigiotteria
-            <i class="fa fa-caret-down"></i>
         </button>
-        <div class="dropdown-content">
-            <a href="InizioServlet?valore=Collane">Collane</a>
-            <a href="InizioServlet?valore=Bracciali">Bracciali</a>
-            <a href="InizioServlet?valore=Anelli">Anelli</a>
-        </div>
     </div>
 
     <div class="dropdown">
         <button class="dropbtn" onclick="window.location.href='../InizioServlet?valore=Clothes'">Clothes
-            <i class="fa fa-caret-down"></i>
         </button>
-        <div class="dropdown-content">
-            <a href="InizioServlet?valore=Felpe">Felpe</a>
-            <a href="InizioServlet?valore=MaglieAManicaLunga">Maglie a manica lunga</a>
-            <a href="InizioServlet?valore=Camicie">Camicie</a>
-            <a href="InizioServlet?valore=T-Shirt">T-Shirt</a>
-        </div>
     </div>
 
     <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>

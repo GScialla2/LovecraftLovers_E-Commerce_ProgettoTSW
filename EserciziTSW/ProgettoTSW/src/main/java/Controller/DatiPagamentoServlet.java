@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
-@WebServlet(name = "DatiPagamentoServlet", value = "/DatiPagamentoServlet")
+@WebServlet("/DatiPagamentoServlet")
 public class DatiPagamentoServlet extends HttpServlet
 {
     @Override
@@ -42,7 +42,7 @@ public class DatiPagamentoServlet extends HttpServlet
         qList.clear();
         session.setAttribute("cart-list", cart_list);
         session.setAttribute("quantitaArticoli", qList);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("HomePage");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("");
         dispatcher.forward(request, response);
     }
 }

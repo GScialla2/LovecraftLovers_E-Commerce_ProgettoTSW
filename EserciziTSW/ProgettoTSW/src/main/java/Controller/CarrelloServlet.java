@@ -21,8 +21,8 @@ public class CarrelloServlet extends HttpServlet
         Utente u = (Utente)session.getAttribute("Utente");
         ArrayList<Prodotto> cartList = new ArrayList<Prodotto>();
         ArrayList<Integer> qList = new ArrayList<Integer>();
-        if(u!= null)
-        {
+        /*if(u!= null)
+        {*/
             ArrayList<Prodotto> cart_list = (ArrayList<Prodotto>) session.getAttribute("cart-list");
             ArrayList<Integer> q_List = (ArrayList<Integer>) session.getAttribute("quantitaArticoli");
             Prodotto p = (Prodotto) session.getAttribute("prod");
@@ -33,7 +33,7 @@ public class CarrelloServlet extends HttpServlet
                 qList.add(Integer.valueOf(request.getParameter("quantita")));
                 session.setAttribute("cart-list",cartList);
                 session.setAttribute("quantitaArticoli",qList);
-                RequestDispatcher dispatcher = request.getRequestDispatcher("HomePage");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("");
                 dispatcher.forward(request,response);
             }
             else
@@ -55,16 +55,16 @@ public class CarrelloServlet extends HttpServlet
                 {
                     cartList.add(p);
                     qList.add(Integer.valueOf(request.getParameter("quantita")));
-                    RequestDispatcher dispatcher = request.getRequestDispatcher("HomePage");
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("");
                     dispatcher.forward(request,response);
                 }
                 else
                 {
-                    RequestDispatcher dispatcher = request.getRequestDispatcher("HomePage");
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("");
                     dispatcher.forward(request,response);
                 }
             }
-        }
+        }/*
         else
         {
             RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/results/Login.jsp");
@@ -84,7 +84,7 @@ public class CarrelloServlet extends HttpServlet
                     session.setAttribute("quantitaArticoli",qList);
                 }
             }
-            RequestDispatcher dispatcher1 = request.getRequestDispatcher("HomePage");
+            RequestDispatcher dispatcher1 = request.getRequestDispatcher("");
             dispatcher1.forward(request,response);
         }
         else
@@ -92,5 +92,5 @@ public class CarrelloServlet extends HttpServlet
             RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/results/Login.jsp");
             dispatcher.forward(request,response);
         }
-    }
+    }*/
 }

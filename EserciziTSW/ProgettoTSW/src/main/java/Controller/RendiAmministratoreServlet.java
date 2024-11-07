@@ -6,7 +6,7 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
-@WebServlet(name = "RendiAmministratoreServlet", value = "/RendiAmministratoreServlet")
+@WebServlet("/RendiAmministratoreServlet")
 public class RendiAmministratoreServlet extends HttpServlet
 {
     @Override
