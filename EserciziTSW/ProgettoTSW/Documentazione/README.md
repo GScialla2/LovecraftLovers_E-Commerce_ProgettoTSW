@@ -9,6 +9,6 @@ Il sito tratta la commercializzazione online di svariati oggetti (dai libri e le
 Il progetto è stato realizzato con Java, JavaScript, JSP, AJAX, HTML e CSS.
 
 
-Gli autori dell'artefatto software sono: 
+Gli autori dell'artefatto software sono: Scialla Gabriele Armando N°Matricola - 0512116940
 
 Scialla Gabriele - Numero di matricola: 0512116940 - Linkedin: www.linkedin.com/in/gabriele-scialla-44188b2b9
